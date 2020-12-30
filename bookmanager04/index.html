@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 开发环境版本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	{{name}}
+	{{ message }}
+	<a v-bind:href="{{home}}">正确--点击访问</a>
+	<hr>
+	<!-- v-if -->
+	<a href="#" v-if="isLogin">是否看得见</a>
+	<!-- v-if v-else -->
+	<span v-if="isLogin">个人中心</span>
+	<span v-else>登录</span>
+	<!-- v-if  v-else-if  v-else-if  v-else -->
+	<span v-if="level === 1">国王</span>
+	<span v-else-if="level === 2">皇亲</span>
+	<span v-else-if="level === 3">国戚</span>
+	<span v-else-if="level ===4">大臣</span>
+	<span v-else>平民</span>
+	<!-- v-show 和 v-if 类似 -->
+	<!-- v-show用法和v-if大致一样，但是它不支持v-else,它和v-if的区别是，它制作元素样式的显示和隐藏，元素一直是存在的 -->
+	<hr>
+	<h1 v-if="seen">if</h1>
+	<h1 v-show="seen">show</h1>
+</div>
+</body>
+<!-- 创建vue 实例 vue 属于 -->
+<script type="text/javascript">
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!',
+    name:'itcast',
+    home:'http://www.itcast.cn',
+    isLogin:true,	//js de true he folse都是小写
+    level=1,
+    seen:false,
+  }
+})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
